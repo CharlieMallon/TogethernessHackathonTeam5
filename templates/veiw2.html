@@ -3,11 +3,9 @@
 {% block content %}
 <div class="game-container">
     <div id="game-canvas">
-        <img id="game-background" src="{{ url_for('static', filename='img/hallway.jpg') }}" alt="">
+        <img id="game-background" src="{{ url_for('static', filename='img/veiw2.jpg') }}" alt="">
         <div class="click-layer">
-            <a id="patio-door" href="{{ url_for('patio') }}"></a>
-            <a id="stairs-to-lv1" href="{{ url_for('bedroom') }}"></a>
-            <a id="back"  href="{{ url_for('entrance') }}">
+            <a id="back"  href="{{ url_for('lounge') }}">
                 back
             </a>
         </div>

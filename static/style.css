@@ -66,7 +66,7 @@
 
 /* hallway page */
 
-#garden-door{
+#patio-door{
     height: 450px;
     width: 160px;
     position: absolute;
@@ -82,4 +82,53 @@
     left: 300px;
     top: 0px;
     border: solid 10px aqua;
+}
+
+/*  Bedroom Page */
+
+#stairs-to-lv2{
+    height: 100px;
+    width: 200px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    border: solid 10px aqua;
+}
+
+/*  Bedroom Page */
+
+#window1{
+    height: 450px;
+    width: 150px;
+    position: absolute;
+    left: 0px;
+    top: 45px;
+    border: solid 10px aqua;
+}
+
+#window2{
+    height: 330px;
+    width: 120px;
+    position: absolute;
+    left: 280px;
+    top: 100px;
+    border: solid 10px pink;
+}
+
+#window3{
+    height: 320px;
+    width: 170px;
+    position: absolute;
+    left: 600px;
+    top: 90px;
+    border: solid 10px yellow;
+}
+
+#window4{
+    height: 400px;
+    width: 80px;
+    position: absolute;
+    left: 920px;
+    top: 50px;
+    border: solid 10px purple;
 }

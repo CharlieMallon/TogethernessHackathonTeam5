@@ -39,6 +39,31 @@ def hallway():
     return render_template("hallway.html")
 
 
+@app.route("/patio")
+def patio():
+    return render_template("patio.html")
+
+
+@app.route("/bedroom")
+def bedroom():
+    return render_template("bedroom.html")
+
+
+@app.route("/lounge")
+def lounge():
+    return render_template("lounge.html")
+
+
+@app.route("/veiw1")
+def veiw1():
+    return render_template("veiw1.html")
+
+
+@app.route("/veiw2")
+def veiw2():
+    return render_template("veiw2.html")
+
+
 if __name__ == "__main__":
     app.run(
         host=os.environ.get("IP"),
