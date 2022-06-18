@@ -1,3 +1,11 @@
+
+* {
+    color: blue;
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
 /* tower image */
 .bg_image {
     position: absolute;
@@ -102,4 +110,132 @@
 /* 10px top margin */
 .mt-10 {
     margin-top: 10px;
+}
+
+/* game page structure */
+
+.game-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#game-canvas{
+    height: 700px;
+    width: 1000px;
+    position: relative;
+}
+
+#game-background{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.click-layer{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+#game-text{
+    height: 150px;
+    width: 1000px;
+    border: solid black 1px;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+#game-text p{
+    margin: 0px;
+}
+
+#back{
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    left: 0px;
+    top: 600px;
+    border: solid 10px greenyellow;
+}
+
+/* Entrance page */
+
+#entrance{
+    height: 300px;
+    width: 170px;
+    position: absolute;
+    left: 500px;
+    top: 170px;
+}
+
+/* hallway page */
+
+#patio-door{
+    height: 450px;
+    width: 160px;
+    position: absolute;
+    left: 320px;
+    top: 170px;
+    border: solid 10px pink;
+}
+
+#stairs-to-lv1{
+    height: 100px;
+    width: 200px;
+    position: absolute;
+    left: 300px;
+    top: 0px;
+    border: solid 10px aqua;
+}
+
+/*  Bedroom Page */
+
+#stairs-to-lv2{
+    height: 100px;
+    width: 200px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    border: solid 10px aqua;
+}
+
+/*  Bedroom Page */
+
+#window1{
+    height: 450px;
+    width: 150px;
+    position: absolute;
+    left: 0px;
+    top: 45px;
+    border: solid 10px aqua;
+}
+
+#window2{
+    height: 330px;
+    width: 120px;
+    position: absolute;
+    left: 280px;
+    top: 100px;
+    border: solid 10px pink;
+}
+
+#window3{
+    height: 320px;
+    width: 170px;
+    position: absolute;
+    left: 600px;
+    top: 90px;
+    border: solid 10px yellow;
+}
+
+#window4{
+    height: 400px;
+    width: 80px;
+    position: absolute;
+    left: 920px;
+    top: 50px;
+    border: solid 10px purple;
 }

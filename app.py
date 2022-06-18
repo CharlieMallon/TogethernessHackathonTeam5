@@ -4,6 +4,8 @@ from flask import (
     redirect, request, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+
+
 if os.path.exists("env.py"):
     import env
 
@@ -36,6 +38,41 @@ def create_game():
 def join_game():
     return render_template("join_game.html")
 
+
+
+@app.route("/entrance")
+def entrance():
+    return render_template("entrance.html")
+
+
+@app.route("/hallway")
+def hallway():
+    return render_template("hallway.html")
+
+
+@app.route("/patio")
+def patio():
+    return render_template("patio.html")
+
+
+@app.route("/bedroom")
+def bedroom():
+    return render_template("bedroom.html")
+
+
+@app.route("/lounge")
+def lounge():
+    return render_template("lounge.html")
+
+
+@app.route("/view1")
+def view1():
+    return render_template("view1.html")
+
+
+@app.route("/view2")
+def view2():
+    return render_template("view2.html")
 
 
 if __name__ == "__main__":
