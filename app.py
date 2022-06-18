@@ -21,22 +21,26 @@ mongo = PyMongo(app)
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    value = True
+    return render_template("index.html", value=value)
 
 
 @app.route("/game")
 def game():
-    return render_template("game_start.html")
+    value = True
+    return render_template("game_start.html", value=value)
 
 
 @app.route("/create_game")
 def create_game():
-    return render_template("create_game.html")
+    value = True
+    return render_template("create_game.html", value=value)
 
 
 @app.route("/join_game")
 def join_game():
-    return render_template("join_game.html")
+    value = True
+    return render_template("join_game.html", value=value)
 
 
 
