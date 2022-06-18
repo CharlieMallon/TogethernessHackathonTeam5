@@ -16,7 +16,16 @@
                 <div>
                     <img class="bg_image" src="{{ url_for('static', filename='img/tower.jpg') }}">
                     <div class="bg_text">
-                        <a href="{{ url_for('index') }}"><h1>LOST IN TIME</h1></a>
+                        
+                        {% if value == True %}
+                            {% block if_block %}
+                            <a href="{{ url_for('index') }}"><h1 style="padding-top: 15vh;">LOST IN TIME</h1></a>
+                            {% endblock if_block %}
+                        {% else %}
+                            {% block else_block %}
+                            <a href="{{ url_for('index') }}"><h1>LOST IN TIME</h1></a>
+                            {% endblock else_block %}
+                        {% endif %}
                     </div>
                     {% block content %}
                         
