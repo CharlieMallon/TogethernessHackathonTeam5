@@ -1,7 +1,31 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="center_buttons">
-    <button class="button" type="button" onclick="window.location.href='{{ url_for( 'create_game' ) }}';">Create Game</button>
-    <button class="button" type="button" onclick="window.location.href='{{ url_for( 'join_game' ) }}';">Join Game</button>
+    <!-- enter game id -->
+    <form class="center_text">
+        <label for="enter_game_id">GAME ID:</label><br>
+        <input type="text" id="enter_game_id" name="enter_game_id" value="">
+        <button type="submit">Join</button>
+      </form>
 </div>
+
+<!-- enter random game - for loop with game IDs -->
+<!-- 1 -->
+<form class="center_text">
+    <label for="enter_game_id">GAME ID:</label><br>
+    <input type="text" id="enter_game_id" name="enter_game_id" value="" disabled>
+    <button type="submit">Join</button>
+</form>
+<!-- 2 -->
+<form class="center_text">
+    <label for="enter_game_id">GAME ID:</label><br>
+    <input type="text" id="enter_game_id" name="enter_game_id" value="" disabled>
+    <button type="submit">Join</button>
+</form>
+<!-- 3 -->
+<form class="center_text">
+    <label for="enter_game_id">GAME ID:</label><br>
+    <input type="text" id="enter_game_id" name="enter_game_id" value="" disabled>
+    <button type="submit">Join</button>
+</form>
 {% endblock %}
