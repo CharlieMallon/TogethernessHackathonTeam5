@@ -1,7 +1,11 @@
 * {
     color: blue;
     box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
 }
+
+/* game page structure */
 
 .game-container{
     display: flex;
@@ -13,13 +17,20 @@
 #game-canvas{
     height: 700px;
     width: 1000px;
+    position: relative;
 }
 
-.game-background{
+#game-background{
     width: 100%;
     height: 100%;
     object-fit: cover;
     overflow: hidden;
+}
+
+.click-layer{
+    position: absolute;
+    top: 0px;
+    left: 0px;
 }
 
 #game-text{
@@ -27,4 +38,19 @@
     width: 1000px;
     border: solid black 1px;
     margin-top: 10px;
+    padding: 10px;
+}
+
+#game-text p{
+    margin: 0px;
+}
+
+/* Entrance page */
+
+#entrance{
+    height: 300px;
+    width: 170px;
+    position: absolute;
+    left: 500px;
+    top: 170px;
 }
