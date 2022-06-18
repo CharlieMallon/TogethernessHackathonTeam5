@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" type="text/css">
     <title>Index</title>
 </head>
@@ -14,7 +15,21 @@
             <li><a href="{{ url_for('game') }}">Game</a></li>
         </ul>
     </nav>
- {% block content %}
- {% endblock %}
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div>
+                    <img class="bg_image" src="{{ url_for('static', filename='img/tower.jpg') }}">
+                    <div class="bg_text">
+                    <h1>LOST IN TIME</h1>
+                    </div>
+                    {% block content %}
+                        
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </header>
 </body>
 </html>
