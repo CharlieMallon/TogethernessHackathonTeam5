@@ -29,6 +29,16 @@ def game():
     return render_template("game.html")
 
 
+@app.route("/entrance")
+def entrance():
+    return render_template("entrance.html")
+
+
+@app.route("/hallway")
+def hallway():
+    return render_template("hallway.html")
+
+
 if __name__ == "__main__":
     app.run(
         host=os.environ.get("IP"),
