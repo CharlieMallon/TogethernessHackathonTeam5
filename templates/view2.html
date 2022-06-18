@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="game-container">
+    <div id="game-canvas">
+        <img id="game-background" src="{{ url_for('static', filename='img/view2.jpg') }}" alt="">
+        <div class="click-layer">
+            <a id="back"  href="{{ url_for('lounge') }}">
+                back
+            </a>
+        </div>
+    </div>
+    <div id="game-text">
+        <p>text will go here - each click will be a list item, could append to a list or an array. If going into the database how are we dealing with pushing data to the db, will it end up going over the read/write limit?</p>
+    </div>
+</div>
+{% endblock %}
