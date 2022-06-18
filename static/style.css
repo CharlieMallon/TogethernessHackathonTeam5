@@ -45,6 +45,15 @@
     margin: 0px;
 }
 
+#back{
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    left: 0px;
+    top: 600px;
+    border: solid 10px greenyellow;
+}
+
 /* Entrance page */
 
 #entrance{
@@ -53,4 +62,24 @@
     position: absolute;
     left: 500px;
     top: 170px;
+}
+
+/* hallway page */
+
+#garden-door{
+    height: 450px;
+    width: 160px;
+    position: absolute;
+    left: 320px;
+    top: 170px;
+    border: solid 10px pink;
+}
+
+#stairs-to-lv1{
+    height: 100px;
+    width: 200px;
+    position: absolute;
+    left: 300px;
+    top: 0px;
+    border: solid 10px aqua;
 }
