@@ -54,14 +54,14 @@ def lounge():
     return render_template("lounge.html")
 
 
-@app.route("/veiw1")
-def veiw1():
-    return render_template("veiw1.html")
+@app.route("/view1")
+def view1():
+    return render_template("view1.html")
 
 
-@app.route("/veiw2")
-def veiw2():
-    return render_template("veiw2.html")
+@app.route("/view2")
+def view2():
+    return render_template("view2.html")
 
 
 if __name__ == "__main__":
