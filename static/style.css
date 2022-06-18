@@ -15,7 +15,7 @@
     font-size: 2rem;
     text-align: center;
 }
-/* create join game buttons */
+/* buttons */
 .button {
     border: none;
     color: black;
@@ -28,9 +28,14 @@
     cursor: pointer;
     margin: auto;
   }
-  .center_buttons {
+.center_buttons {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 15vh;
-  }
+}
+.center_text {
+    text-align: center;
+    width: 80%;
+    margin: auto;
+}

@@ -24,7 +24,7 @@ def index():
 
 @app.route("/game")
 def game():
-    return render_template("game.html")
+    return render_template("game_start.html")
 
 
 if __name__ == "__main__":
