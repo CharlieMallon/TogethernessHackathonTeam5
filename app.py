@@ -27,6 +27,17 @@ def game():
     return render_template("game_start.html")
 
 
+@app.route("/create_game")
+def create_game():
+    return render_template("create_game.html")
+
+
+@app.route("/join_game")
+def join_game():
+    return render_template("join_game.html")
+
+
+
 if __name__ == "__main__":
     app.run(
         host=os.environ.get("IP"),
