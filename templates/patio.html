@@ -1,10 +1,14 @@
 {% extends "base.html" %}
 
 {% block game_content %}
-    <img id="game-background" src="{{ url_for('static', filename='img/patio.jpg') }}" alt="">
+    <img id="game-background" src="{{ url_for('static', filename='img/terrace.jpg') }}" alt="">
     <div class="click-layer">
+        <a href="{{ url_for('pot')}}">POT</a>
+        {{ entry.dialog }}
         <a id="back"  href="{{ url_for('hallway') }}">
             back
         </a>
+
+
     </div>
 {% endblock %}

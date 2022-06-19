@@ -36,9 +36,11 @@ def create_game():
         if request.form.get("player_no"):
             player_two = request.form.get("player_name").lower()
             player_one = ""
+            player = 2
         else:
             player_one = request.form.get("player_name").lower()
             player_two = ""
+            player = 1
 
         if request.form.get("private"):
             private = True
@@ -54,7 +56,8 @@ def create_game():
         try:
             mongo.db.games.insert_one(game)
             session["game"] = game_id
-            return redirect(url_for('entrance', game_id=session["game"]))
+            session["player_no"] = player
+            return redirect(url_for('entrance'))
         except:
             print("error")
 
@@ -87,6 +90,21 @@ def hallway():
 def patio():
     gamePage = True
     return render_template("patio.html", gamePage=gamePage)
+
+
+@app.route("/pot")
+def pot():
+    gamePage = True
+    player_no = session["player_no"]
+    trigger = "empty_plant_pot"
+    dialog = mongo.db.dialog.find_one({
+        "player": player_no,
+        "trigger": trigger
+        }, ["dialog"])
+    print(player_no)
+    print(dialog)
+
+    return render_template("patio.html", gamePage=gamePage, entry=dialog)
 
 
 @app.route("/bedroom")
