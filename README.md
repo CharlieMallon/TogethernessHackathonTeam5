@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html lang="en-US">
-  <head>
-    <meta charset="UTF-8">
-  </head>
-  <body>
+![Lost In Time](https://github.com/Martin-ITT/MS4_Crazy_Burger/blob/main/media/amIresponsive.JPG "Lost In Time")
     <h1>Lost in time</h1>
     <br>
     <p>A project to celebrate Pride Month, revolving around the theme of "Togetherness"</p>
@@ -21,6 +16,8 @@
     <h5>Developer goals:</h5>
     <ul>
       <li>As a queer developer, I would like to create a LGBTQIA-relevant story.</li>
+      <li>As a queer developer, I would like to explore possibilities of DB to connect people</li>
+      <li>As a queer developer, I would like to learn new technologies</li>
     </ul>
      <h2>Skeleton (wireframes)</h2>
     <br>
