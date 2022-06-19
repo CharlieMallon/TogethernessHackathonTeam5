@@ -18,6 +18,8 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
+gamePage = False
+
 
 @app.route("/")
 def index():
@@ -31,37 +33,38 @@ def game():
 
 @app.route("/entrance")
 def entrance():
-    return render_template("entrance.html")
+    gamePage = True
+    return render_template("entrance.html", gamePage=gamePage)
 
 
 @app.route("/hallway")
 def hallway():
-    return render_template("hallway.html")
+    return render_template("hallway.html", gamePage=gamePage)
 
 
 @app.route("/patio")
 def patio():
-    return render_template("patio.html")
+    return render_template("patio.html", gamePage=gamePage)
 
 
 @app.route("/bedroom")
 def bedroom():
-    return render_template("bedroom.html")
+    return render_template("bedroom.html", gamePage=gamePage)
 
 
 @app.route("/lounge")
 def lounge():
-    return render_template("lounge.html")
+    return render_template("lounge.html", gamePage=gamePage)
 
 
 @app.route("/view1")
 def view1():
-    return render_template("view1.html")
+    return render_template("view1.html", gamePage=gamePage)
 
 
 @app.route("/view2")
 def view2():
-    return render_template("view2.html")
+    return render_template("view2.html", gamePage=gamePage)
 
 
 if __name__ == "__main__":
