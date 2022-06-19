@@ -1,31 +1,36 @@
 {% extends "base.html" %}
 {% block content %}
-<p class="center_text"><span id="game_ID"></span>: GAME ID</p>
-<div class="center_buttons">
-    <button class="button" type="button" onclick="game_ID()">Get another ID</button>
 
-</div>
-<!-- SLIDERS -->
-<div class="center_text">
-    <span>OPEN</span>
-    <label class="switch">
-        <input type="checkbox">
-        <span class="slider round"></span>
-    </label>
-    <span>PRIVATE</span>
-</div>
-<div class="center_text mt-10">
-    <span>PAST</span>
-    <label class="switch">
-        <input type="checkbox" checked>
-        <span class="slider round"></span>
-    </label>
-    <span>FUTURE</span>
-</div>
-<div class="center_buttons">
-    <button class="button" type="button" onclick="window.location.href='{{ url_for( 'entrance' ) }}'">Entrance</button>
-    <button class="button" type="button" onclick="window.location.href='{{ url_for( 'join_game' ) }}'">***Share</button>
-</div>
+<form action="{{ url_for('create_game') }}" method="POST">
+    <div class="center_buttons">
+        <label for="game_ID">Game ID</label>
+        <input id="game_ID" type="text" value="game id">
+        <div class="button" onclick="game_ID()">Get another ID</div>
+    </div>
+    <!-- SLIDERS -->
+    <div class="center_text">
+        <span>Public</span>
+        <label for="private" class="switch">
+            <input id="private" type="checkbox">
+            <span class="slider round"></span>
+        </label>
+        <span>Private</span>
+    </div>
+    <div class="center_text mt-10">
+        <span>One</span>
+        <label for="player_no" class="switch">
+            <input id="player_no" type="checkbox">
+            <span class="slider round"></span>
+        </label>
+        <span>Two</span>
+    </div>
+    <label for="player_name">Your Name</label>
+    <input id="player_name" type="text">
+    <div class="center_buttons">
+        <button class="button" type="submit">Start</button>
+        <div class="button">***Share</div>
+    </div>
+</form>
 {% endblock %}
 
 
@@ -33,16 +38,16 @@
     <script>
         async function game_ID() {
             const response = await fetch('https://random-word-api.herokuapp.com/all');
-            const randomWords = await response.json()
+            const randomWords = await response.json();
             var firstWord=randomWords[Math.floor(Math.random()*randomWords.length)];
             var secondWord=randomWords[Math.floor(Math.random()*randomWords.length)];
             var thirdWord=randomWords[Math.floor(Math.random()*randomWords.length)];
             let finalWords=firstWord + "-" + secondWord + "-" + thirdWord;
 
-            let span = document.getElementById('game_ID');
+            let gameIdInput = document.getElementById('game_ID');
 
-            span.innerHTML = finalWords;
+            gameIdInput.value = finalWords;
         }
-        game_ID()
+        game_ID();
     </script>
 {% endblock %}

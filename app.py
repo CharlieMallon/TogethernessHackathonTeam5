@@ -1,11 +1,9 @@
 import os
 from flask import (
-    Flask, config, render_template,
-    redirect, request, url_for)
+    Flask, flash, render_template,
+    redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
-
-
 if os.path.exists("env.py"):
     import env
 
@@ -31,14 +29,16 @@ def game():
     return render_template("game_start.html")
 
 
-@app.route("/create_game")
+@app.route("/create_game", methods=['GET', 'POST'])
 def create_game():
     return render_template("create_game.html")
 
 
 @app.route("/join_game")
 def join_game():
-    return render_template("join_game.html")
+    games = mongo.db.games.find()
+    print('games', games)
+    return render_template("join_game.html", games=games)
 
 
 # *********** Game Pages *************
