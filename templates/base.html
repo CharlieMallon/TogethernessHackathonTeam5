@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CSS only -->
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" type="text/css">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Comfortaa:wght@300;400;700&family=Indie+Flower&family=Pacifico&display=swap" rel="stylesheet">
     <title>Index</title>
 </head>
 <body>
@@ -19,11 +23,11 @@
                         
                         {% if value == True %}
                             {% block if_block %}
-                            <a href="{{ url_for('index') }}"><h1 style="padding-top: 15vh;">LOST IN TIME</h1></a>
+                                <a href="{{ url_for('index') }}"><h1 style="padding-top: 15vh;">LOST IN TIME</h1></a>
                             {% endblock if_block %}
                         {% else %}
                             {% block else_block %}
-                            <a href="{{ url_for('index') }}"><h1>LOST IN TIME</h1></a>
+                                <a href="{{ url_for('index') }}"><h1>LOST IN TIME</h1></a>
                             {% endblock else_block %}
                         {% endif %}
                     </div>
