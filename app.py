@@ -32,25 +32,32 @@ def game():
 @app.route("/create_game", methods=['GET', 'POST'])
 def create_game():
     if request.method == 'POST':
-        game_id = request.form.get("game_ID")
+        game_id = request.form.get("game_ID").lower()
         if request.form.get("player_no"):
-            player_two = request.form.get("player_name")
+            player_two = request.form.get("player_name").lower()
             player_one = ""
         else:
-            player_one = request.form.get("player_name")
+            player_one = request.form.get("player_name").lower()
             player_two = ""
+
+        if request.form.get("private"):
+            private = True
+        else:
+            private = False
 
         game = {
             "game_id": game_id,
-            "private": request.form.get("private"),
+            "private": private,
             "player_one": player_one,
             "player_two": player_two,
         }
         try:
             mongo.db.games.insert_one(game)
-            return redirect(url_for('entrance'), game_id=game_id)
+            session["game"] = game_id
+            return redirect(url_for('entrance', game_id=session["game"]))
         except:
             print("error")
+
     return render_template("create_game.html")
 
 

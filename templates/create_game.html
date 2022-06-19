@@ -3,15 +3,15 @@
 
 <form action="{{ url_for('create_game') }}" method="POST">
     <div class="center_buttons">
-        <label for="game_ID">Game ID</label>
-        <input id="game_ID" type="text" value="game id">
+        <label for="game_ID">Game ID: </label>
+        <input id="game_ID" name="game_ID" type="text" value="game id">
         <div class="button" onclick="game_ID()">Get another ID</div>
     </div>
     <!-- SLIDERS -->
     <div class="center_text">
         <span>Public</span>
         <label for="private" class="switch">
-            <input id="private" type="checkbox">
+            <input id="private" name="private" type="checkbox">
             <span class="slider round"></span>
         </label>
         <span>Private</span>
@@ -19,13 +19,13 @@
     <div class="center_text mt-10">
         <span>One</span>
         <label for="player_no" class="switch">
-            <input id="player_no" type="checkbox">
+            <input id="player_no" name="player_no" type="checkbox">
             <span class="slider round"></span>
         </label>
         <span>Two</span>
     </div>
     <label for="player_name">Your Name</label>
-    <input id="player_name" type="text">
+    <input id="player_name" name="player_name" type="text">
     <div class="center_buttons">
         <button class="button" type="submit">Start</button>
         <div class="button">***Share</div>
