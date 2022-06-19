@@ -1,4 +1,4 @@
-![Lost In Time](https://github.com/CharlieMallon/TogethernessHackathonTeam5/blob/Koshirikdo-patch-1/static/img/lit.JPG "Lost In Time")
+![Out of Time](https://github.com/CharlieMallon/TogethernessHackathonTeam5/blob/Koshirikdo-patch-1/static/img/lit.JPG "Out of Time")
 
 <span id="project"></span>
 ## [Code Institute](https://codeinstitute.net)
@@ -18,7 +18,7 @@
 1. <a href="#deployment">Deployment 💥</a>
 1. <a href="#credits">Credits 👋</a>
 
-# Lost in time
+# Out of time
     
 Our Pink Girrafe team joined Pride Hackathon to create a project to celebrate Pride Month, revolving around the theme of "Togetherness".
 We have decided to create an adventure game which can help to bring people together.
@@ -29,7 +29,7 @@ We have decided to create an adventure game which can help to bring people toget
 
 ## User Experience (UX)
 
-<strong>Lost in Time</strong> is a point and click adventure game where two characters living in the same house but in two different time periods must work together to achieve a common goal. Every action taken in the past will affect the future, in order to solve puzzles and advance in the game.
+<strong>Out of Time</strong> is a point and click adventure game where two characters living in the same house but in two different time periods must work together to achieve a common goal. Every action taken in the past will affect the future, in order to solve puzzles and advance in the game.
 Users can choose between a single-player and a two-player campaign, the latter of which can be accessed through a mutual words-based ID.
 
 ### User stories
