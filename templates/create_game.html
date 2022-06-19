@@ -31,9 +31,15 @@
 
 {% block scripts %}
     <script>
-        function game_ID() {
+        async function getRandomWord(){
+            const response = await fetch('https://random-word-api.herokuapp.com/word');
+            const data = await response.json()
+            const word = data[0]
+            return word
+        }
 
-            var randomWords=["You", "Me", "Hello", "Going"];
+        function game_ID() {
+            var randomWords=getRandomWord();
             var firstWord=randomWords[Math.floor(Math.random()*randomWords.length)];
             var secondWord=randomWords[Math.floor(Math.random()*randomWords.length)];
             var thirdWord=randomWords[Math.floor(Math.random()*randomWords.length)];
@@ -44,5 +50,6 @@
             span.innerHTML = finalWords;
         }
         game_ID()
+        getRandomWord()
     </script>
 {% endblock %}
