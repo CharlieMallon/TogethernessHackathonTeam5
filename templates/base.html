@@ -1,42 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- CSS only -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" type="text/css">
-    <title>Index</title>
-</head>
-<body>
-   
-    <section>
-        <div class="container">
-            <div class="row">
-                <div>
-                    <img class="bg_image" src="{{ url_for('static', filename='img/tower.jpg') }}">
-                    <div class="bg_text">
-                        
-                        {% if value == True %}
-                            {% block if_block %}
-                            <a href="{{ url_for('index') }}"><h1 style="padding-top: 15vh;">LOST IN TIME</h1></a>
-                            {% endblock if_block %}
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- CSS only -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" type="text/css">
+        <title>Index</title>
+    </head>
+    <body>
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div>
+                        <img class="bg_image" src="{{ url_for('static', filename='img/tower.jpg') }}">
+                        <div class="bg_text">
+                            
+                            {% if gamePage == True %}
+                                {% block if_block %}
+                                    <a href="{{ url_for('index') }}"><h1>LOST IN TIME</h1></a>
+                                {% endblock if_block %}
+                            {% else %}
+                                {% block else_block %}
+                                    <a href="{{ url_for('index') }}"><h1 style="padding-top: 15vh;">LOST IN TIME</h1></a>
+                                {% endblock else_block %}
+                            {% endif %}
+                        </div>
+                        {% if gamePage == True %}
+                            <div class="game-container">
+                                <div id="game-canvas">
+                                    {% block game_content %}
+
+                                    {% endblock %}
+                                </div>
+                                <div id="game-text">
+                                    <p>text will go here - each click will be a list item, could append to a list or an array. If going into the database how are we dealing with pushing data to the db, will it end up going over the read/write limit?</p>
+                                </div>
+                            </div>
                         {% else %}
-                            {% block else_block %}
-                            <a href="{{ url_for('index') }}"><h1>LOST IN TIME</h1></a>
-                            {% endblock else_block %}
+                            {% block content %}
+                            {% endblock content %}
                         {% endif %}
                     </div>
-                    {% block content %}
-                        
-                    {% endblock %}
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- Custom JS -->
-    {% block scripts %}
-    {% endblock %}
-
-</body>
+        </section>
+    </body>
 </html>
