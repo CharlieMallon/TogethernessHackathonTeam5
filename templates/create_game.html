@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<p class="center_text"><span class="game_ID"></span>: GAME ID</p>
+<div class="center_buttons">
+    <button class="button" type="button" onclick="window.location.href='{{ url_for( 'create_game' ) }}';">***Get another ID</button>
+
+</div>
+<!-- SLIDERS -->
+<div class="center_text">
+    <span>OPEN</span>
+    <label class="switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+    </label>
+    <span>PRIVATE</span>
+</div>
+<div class="center_text mt-10">
+    <span>PAST</span>
+    <label class="switch">
+        <input type="checkbox" checked>
+        <span class="slider round"></span>
+    </label>
+    <span>FUTURE</span>
+</div>
+<div class="center_buttons">
+    <button class="button" type="button" onclick="window.location.href='{{ url_for( 'entrance' ) }}';">Entrance</button>
+    <button class="button" type="button" onclick="window.location.href='{{ url_for( 'join_game' ) }}';">***Share</button>
+</div>
+{% endblock %}

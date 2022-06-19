@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
-   
-        <h1>{{ greetings }}</h1>
-  
+<div class="center_buttons">
+      <button class="button" type="button" onclick="window.location.href='{{ url_for( 'game' ) }}';">Play</button>
+</div>
+<p class="center_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae ullam accusamus aspernatur placeat cumque magni ad quibusdam pariatur, ipsum inventore mollitia magnam earum suscipit, veniam eos tempora accusantium maxime ea.</p>
+
 {% endblock %}

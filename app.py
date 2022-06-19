@@ -28,7 +28,20 @@ def index():
 
 @app.route("/game")
 def game():
-    return render_template("game.html")
+    return render_template("game_start.html")
+
+
+@app.route("/create_game")
+def create_game():
+    return render_template("create_game.html")
+
+
+@app.route("/join_game")
+def join_game():
+    return render_template("join_game.html")
+
+
+# *********** Game Pages *************
 
 
 @app.route("/entrance")
@@ -39,31 +52,37 @@ def entrance():
 
 @app.route("/hallway")
 def hallway():
+    gamePage = True
     return render_template("hallway.html", gamePage=gamePage)
 
 
 @app.route("/patio")
 def patio():
+    gamePage = True
     return render_template("patio.html", gamePage=gamePage)
 
 
 @app.route("/bedroom")
 def bedroom():
+    gamePage = True
     return render_template("bedroom.html", gamePage=gamePage)
 
 
 @app.route("/lounge")
 def lounge():
+    gamePage = True
     return render_template("lounge.html", gamePage=gamePage)
 
 
 @app.route("/view1")
 def view1():
+    gamePage = True
     return render_template("view1.html", gamePage=gamePage)
 
 
 @app.route("/view2")
 def view2():
+    gamePage = True
     return render_template("view2.html", gamePage=gamePage)
 
 
