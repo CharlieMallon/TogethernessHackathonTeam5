@@ -20,7 +20,7 @@
     </ul>
     <h5>Developer goals:</h5>
     <ul>
-      <li>As a queer developer, I would like create a LGBTQIA-relevant story.</li>
+      <li>As a queer developer, I would like to create a LGBTQIA-relevant story.</li>
     </ul>
      <h2>Skeleton (wireframes)</h2>
     <br>
