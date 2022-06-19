@@ -151,9 +151,12 @@ input:checked + .slider:before {
 }
 
 #game-canvas{
-    height: 700px;
-    width: 1000px;
+    height: 80vh;
+    width: 65vw;
     position: relative;
+    border: solid #fff 7px;
+    border-radius: 16px;
+    overflow: hidden;
 }
 
 #game-background{
@@ -170,11 +173,15 @@ input:checked + .slider:before {
 }
 
 #game-text{
-    height: 150px;
-    width: 1000px;
-    border: solid black 1px;
+    min-height: 150px;
+    height: 25vh;
+    width: 65vw;
+    border: solid #fff 7px;
+    border-radius: 16px;
+    overflow: hidden;
     margin-top: 10px;
-    padding: 10px;
+    padding: 50px;
+    background: url(/static/img/notebook.jpg) no-repeat center top local;
 }
 
 #game-text p{
