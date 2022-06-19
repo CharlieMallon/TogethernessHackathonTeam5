@@ -30,7 +30,6 @@
                             <div class="game-container">
                                 <div id="game-canvas">
                                     {% block game_content %}
-
                                     {% endblock %}
                                 </div>
                                 <div id="game-text">
@@ -45,5 +44,8 @@
                 </div>
             </div>
         </section>
+        <!-- Custom JS -->
+        {% block scripts %}
+        {% endblock %}
     </body>
 </html>
