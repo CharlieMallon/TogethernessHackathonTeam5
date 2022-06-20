@@ -1,108 +1,226 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Lost In Time 💞
 
-Welcome CharlieMallon,
+<img src="./static/img/lit.JPG"
+     alt="Lost In Time picture">
+     
+<span id="project"></span>
+## [Code Institute](https://codeinstitute.net)
+### June 2022 Hackathon
+#### Pride Togetherness 🌈
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+#### [live website here](https://togetherness-team5.herokuapp.com/)
+--------------------------------------
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+<span id="index"></span>
+## Index
+ <a href="#project">Project Idea 💖</a>
+1. <a href="#ux">UX 👬 👭</a>
+1. <a href="#features">Features 💕</a>
+1. <a href="#technologies">Technologies Used 💓</a>
+1. <a href="#testing">Testing 💘</a>
+1. <a href="#deployment">Deployment 💥</a>
+1. <a href="#credits">Credits 😘</a>
 
-## Gitpod Reminders
+# Lost In Time
+    
+Our Pink Giraffe team joined Pride Hackathon to create a project to celebrate Pride Month, revolving around the theme of "Togetherness".
+We have decided to create an adventure game which can help to bring people together.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+<span id="ux"></span>
+# 1. UX 👬 👭
+## 1.1 Strategy
 
-`python3 -m http.server`
+## User Experience (UX)
 
-A blue button should appear to click: _Make Public_,
+<strong>Out of Time</strong> is a point and click adventure game where two characters living in the same house but in two different time periods must work together to achieve a common goal. Every action taken in the past will affect the future, in order to solve puzzles and advance in the game.
+Users can choose between a single-player and a two-player campaign, the latter of which can be accessed through a mutual words-based ID.
 
-Another blue button should appear to click: _Open Browser_.
+### User stories
+### Users
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
 
-A blue button should appear to click: _Make Public_,
+| User story | As a/an | I want to be able to | So that I can |
+| -----------: | :--------| :--------------------| :------------|
+| 1 | Player | Play an engaging story | enjoy a good game |
+| 2 | Player | To play a LGTBQIA-related game | feel represented |
+| 3 | Player | To join a LGTBQIA-related game | find some friends |
+| 4 | Player | To play a private game | play the game with a friend |
+| 5 | Player | See how to play | play the game easily |
+| 6 | Team | To create a LGBTQIA-relevant story | support community |
+| 7 | Team | Create a project | connect people |
+| 8 | Team | Promote our project | raise awareness of the community |
 
-Another blue button should appear to click: _Open Browser_.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+   ## 1.2 Scope 
 
-To log into the Heroku toolbelt CLI:
+Based on the User Stories following features and components will be required in order to implement Minimum Viable Product so our app can be deployed.
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+- Welcoming home page with nice hero image
+- Play a private game with ID
+- Responsive design
+- Real and appealing images
+- Page to join created game
+- Share the Game ID created by user
+- Get another ID if user does not like it
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+## 1.3 Structure
 
-------
+Project will contain both the Front-End and Back-End code.
 
-## Release History
+Front-End code will be written in HTML5 and styled with CSS3.
+JavaScript will enable some Front-End dynamic features and also its randomWord function will be used to generate game IDs. 
+Python and Flask framework will be used for easier development. Flask support MongoDB connections which will speed up development process.
+Github repository will be used for version control and project will be deployed to Heroku.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+## 1.4 Skeleton
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+Our game will be divided into two main campaigns. The first one is where the player creates a game. A game ID is generated which can be private and shared to the other player in order to join the game. The second one is to join existing open game. Game IDs and game data will be stored in MongoDB. Game will be played in multiple rooms with clickable areas and objects. 
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+### DB structure
+<img src="./static/img/database_schema.jpg"
+     alt="DB Structure">
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+## 1.5 Surface
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+The inspiration for this project was sourced from our team mate Manuel who lives in a tower. Manuel took pictures of his tower which were cartoonized and will be used as a background and game images. Navigation in game will be carried through clicking on different parts of picture, e.g. clicking on main door will bring the player to lobby.
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+#### Wireframes
+Balsamiq wireframes
+Tower Model
+<br>
+<img src="./static/img/towerWF.JPG"
+     alt="Tower model" style="width: 30%;">
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+Wireframes
+<br>
+<img src="./static/img/wf.JPG"
+     alt="Wireframes" style="width: 75%;">
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+<a href="#index">Back to top ☝️ </a>
+<span id="features"></span>
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+# 2. Features 💕
+## 2.1 Implemented features
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+### Intro page
+ Welcomes user to the game. Large background image with a call to action button and an introduction for the game.
+ 
+### Game start page
+ Lets the player choose whether create a new game or join a co-op one.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+### Create game id page
+Here the user can create an id that can be sent to other players, in addition to choosing whether this session is public or private and what character they'll be playing as.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+### Join game page
+Here the player can submit an id to join the game with another player.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+### Game page
+Consists of different rooms. This is where the player interact with the story.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+## 2.2 To be implemented
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+Few more features could have been implemented but were not initially required. A nice feature would be to have a dialog box for easier communication throughout the game. 
+Another one could be a dating page with ads for lonely people.
 
-------
+<a href="#index">Back to top ☝️ </a>
+<span id="technologies"></span>
 
-## FAQ about the uptime script
+# 3. Technologies Used 💓
 
-**Why have you added this script?**
+## 3.1 Languages
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+- HTML/HTML5
+Each web page was built using HTML elements.
 
-**How will this affect me?**
+- CSS
+Some HTML elements were styled using CSS
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+- JavaScript
+Interactive web behaviour and random word ID generator.
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+- Python
+This app was build using python based framework Flask and its packages.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+## 3.2 IDE, Version control and hosting
 
-**So….?**
+- GitPod
+Collaborative development environments in browser
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+- Git and GitHub
+Version control and repository
 
-**Can I opt out?**
+- Heroku
+GitHub repository was linked with Heroku and is hosted here
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+## 3.4 Other tools
 
-**Anything more?**
+- Balsamiq was used to create wireframes
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+- Am I Responsive was used to create title image for readme.md
 
----
+- DrawSQL was used to create DB schema
 
-Happy coding!
+- Chrome Devtools were used to see the behaviour of the elements and their style
+
+- Cartoonized backgrounds
+    https://play.google.com/store/apps/details?id=com.gamebrain.cartoon&hl=it&gl=US
+
+<a href="#index">Back to top ☝️ </a>
+<span id="testing"></span>
+
+# 4. Testing 💘
+
+## 4.1 Validation
+
+<a href="#index">Back to top ☝️ </a>
+<span id="deployment"></span>
+
+# 5. Deployment 💥
+
+Code and other files as images, and other documents are stored in Github repository. Instructions how to deploy project with Github pages can be found [here](https://github.com/Martin-ITT/memoryTesting). At the time of working on this project Github pages does not support generating dynamic content (running a python code). A cloud application platform Heroku is used to run and operate this project. Heroku is linked with Github repository and automatically deploys the most recent version of the code. MongoDB service is used to store all data. 
+
+Heroku deployment guideline
+1. Create Heroku account
+1. Select Create New app
+1. Provide name and your region and create the app
+1. Select Deploy tab and under deployment method select Connect to GitHub
+1. Find corresponding repository and select Connect
+1. You can enable Automatic Deploys from corresponding branch
+1. Secret variables from local env<span>.</span>py had to be added to Heroku config variables. This can be found under Settings tab - Reveal Config Vars
+1. Select Open app button to run the app
+
+MongoDB guideline
+1. Create MongoDB account
+1. Create New Project
+1. Build a cluster - free cluster was selected for this project
+1. AWS cloud based in Ireland was chosen
+1. When cluster is created click collections
+1. Add your own data
+1. Choose appropriate name for database and also for collection
+1. You can add data / insert documents into DB
+1. Create user / admin account to maintain DB
+1. Configure IP address which can access this DB
+1. Click connect in clusters tab and select connect your application
+1. Select driver and version for your project and copy connection string
+
+
+<a href="#index">Back to top ☝️ </a>
+<span id="credits"></span>
+
+# 6. Credits 😘
+
+A big thank belongs to:
+
+- Our families and friends for their patience
+- Code Institute team
+
+## 6.1 References
+
+    
+    
+    
+    
+    
+    
+    

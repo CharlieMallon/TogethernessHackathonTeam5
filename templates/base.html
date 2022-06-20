@@ -35,11 +35,11 @@
                                 <div class="game-container">
                                     <div id="game-canvas">
                                         {% block game_content %}
-
                                         {% endblock %}
                                     </div>
                                     <div id="game-text">
                                         <p>text will go here - each click will be a list item, could append to a list or an array. If going into the database how are we dealing with pushing data to the db, will it end up going over the read/write limit?</p>
+                                        <p>{{ entries }}</p>
                                     </div>
                                 </div>
                             {% else %}
@@ -53,5 +53,8 @@
                 </div>
             </div>
         </section>
+        <!-- Custom JS -->
+        {% block scripts %}
+        {% endblock %}
     </body>
 </html>

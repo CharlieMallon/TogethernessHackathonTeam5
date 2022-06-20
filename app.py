@@ -1,11 +1,10 @@
+from html import entities
 import os
 from flask import (
-    Flask, config, render_template,
-    redirect, request, url_for)
+    Flask, flash, render_template,
+    redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
-
-
 if os.path.exists("env.py"):
     import env
 
@@ -31,14 +30,50 @@ def game():
     return render_template("game_start.html")
 
 
-@app.route("/create_game")
+@app.route("/create_game", methods=['GET', 'POST'])
 def create_game():
+    if request.method == 'POST':
+        game_id = request.form.get("game_ID").lower()
+        if request.form.get("player_no"):
+            player_two = request.form.get("player_name").lower()
+            player_one = ""
+            player = 2
+        else:
+            player_one = request.form.get("player_name").lower()
+            player_two = ""
+            player = 1
+
+        if request.form.get("private"):
+            private = True
+        else:
+            private = False
+
+        game = {
+            "game_id": game_id,
+            "private": private,
+            "player_one": player_one,
+            "player_two": player_two,
+        }
+        try:
+            mongo.db.games.insert_one(game)
+            mongo.db.game_text.insert_one({
+                "game_id": game_id,
+                "entries": [],
+            })
+            session["game_id"] = game_id
+            session["player_no"] = player
+            return redirect(url_for('entrance'))
+        except:
+            print("error")
+
     return render_template("create_game.html")
 
 
 @app.route("/join_game")
 def join_game():
-    return render_template("join_game.html")
+    games = mongo.db.games.find()
+    print('games', games)
+    return render_template("join_game.html", games=games)
 
 
 # *********** Game Pages *************
@@ -60,6 +95,40 @@ def hallway():
 def patio():
     gamePage = True
     return render_template("patio.html", gamePage=gamePage)
+
+
+@app.route("/entry/<trigger>")
+def entry(trigger):
+    gamePage = True
+    origin = request.args.get('origin', None)
+    dialog = mongo.db.dialog.find_one({
+        "player": session["player_no"],
+        "trigger": trigger
+        }, ["dialog"])
+    
+    entry = {
+        "player": session["player_no"],
+        "text": dialog["dialog"]
+    }
+    print(entry)
+
+    game_text = mongo.db.game_text.find_one(
+        {
+            "game_id": session["game_id"]
+        }
+    )
+    game_text_id = game_text["_id"]
+    
+    mongo.db.game_text.update_one(
+            {"_id": ObjectId(game_text_id)}, {'$push': {'entries': entry}})
+    
+    entries = mongo.db.game_text.find_one(
+        {
+            "game_id": session["game_id"]
+        }, ["entries"]
+    )
+
+    return render_template(f"{origin}.html", gamePage=gamePage, entries=entries)
 
 
 @app.route("/bedroom")

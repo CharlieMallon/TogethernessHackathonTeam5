@@ -6,10 +6,14 @@
         <label for="enter_game_id">GAME ID:</label><br>
         <input type="text" id="enter_game_id" name="enter_game_id" value="">
         <button type="submit">Join</button>
-      </form>
+    </form>
 </div>
 
 <!-- enter random game - for loop with game IDs -->
+
+{% for game in games %}
+    {{game.game_id}}
+{% endfor %}
 <!-- 1 -->
 <form class="center_text">
     <label for="enter_game_id">GAME ID:</label><br>
