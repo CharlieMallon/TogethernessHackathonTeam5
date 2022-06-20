@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- <div class="center_buttons">
+    <form class="center_text">
+        <label for="game_id"  action="{{ url_for('find_game') }}" method="POST">GAME ID:</label><br>
+        <input type="text" id="game_id" name="game_id" value="">
+        <button type="submit">Find</button>
+    </form>
+</div> -->
+
+<!-- enter random game - for loop with game IDs -->
+
+{% for game in games %}
+    {% if not game.private %}
+        {% if not game.closed %}
+        <form class="center_text"  action="{{ url_for('find_game') }}" method="POST">
+            <label for="game_id">GAME ID:</label><br>
+            <input type="text" id="game_id" name="game_id" value="{{game.game_id}}">
+            <button type="submit">Join</button>
+        </form>
+        {% endif %}
+    {% endif %}
+{% endfor %}
+{% endblock %}
