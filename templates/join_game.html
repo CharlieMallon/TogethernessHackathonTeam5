@@ -1,35 +1,19 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="center_buttons">
-    <!-- enter game id -->
-    <form class="center_text">
-        <label for="enter_game_id">GAME ID:</label><br>
-        <input type="text" id="enter_game_id" name="enter_game_id" value="">
-        <button type="submit">Join</button>
-    </form>
-</div>
 
-<!-- enter random game - for loop with game IDs -->
-
-{% for game in games %}
-    {{game.game_id}}
-{% endfor %}
-<!-- 1 -->
-<form class="center_text">
-    <label for="enter_game_id">GAME ID:</label><br>
-    <input type="text" id="enter_game_id" name="enter_game_id" value="" disabled>
-    <button type="submit">Join</button>
-</form>
-<!-- 2 -->
-<form class="center_text">
-    <label for="enter_game_id">GAME ID:</label><br>
-    <input type="text" id="enter_game_id" name="enter_game_id" value="" disabled>
-    <button type="submit">Join</button>
-</form>
-<!-- 3 -->
-<form class="center_text">
-    <label for="enter_game_id">GAME ID:</label><br>
-    <input type="text" id="enter_game_id" name="enter_game_id" value="" disabled>
-    <button type="submit">Join</button>
+<form action="{{ url_for('join_game') }}" method="POST">
+    <div class="center_buttons">
+        <label for="game_ID">Game ID: </label>
+        <input id="game_ID" name="game_ID" type="text" value="{{game.game_id}}">
+    </div>
+    <div class="center_text">
+        <p>This is a Public Game you are player {{session["player_no"]}}. 
+            You are playing with {{ game.player_two }}{{game.player_one}}</p>
+    </div>
+    <label for="player_name">Your Name</label>
+    <input id="player_name" name="player_name" type="text">
+    <div class="center_buttons">
+        <button class="button" type="submit">Join Game</button>
+    </div>
 </form>
 {% endblock %}
