@@ -3,7 +3,7 @@
 {% block game_content %}
     <img id="game-background" src="{{ url_for('static', filename='img/terrace.png') }}" alt="">
     <div class="click-layer">
-        <a href="{{ url_for('entry', trigger='empty_plant_pot', origin='patio')}}">POT</a>
+        <a id="pot" href="{{ url_for('entry', trigger='empty_plant_pot', origin='patio')}}"></a>
         <a id="back"  href="{{ url_for('hallway') }}">
             back
         </a>
