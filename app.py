@@ -55,7 +55,11 @@ def create_game():
         }
         try:
             mongo.db.games.insert_one(game)
-            session["game"] = game_id
+            mongo.db.game_text.insert_one({
+                "game_id": game_id,
+                "entries": [],
+            })
+            session["game_id"] = game_id
             session["player_no"] = player
             return redirect(url_for('entrance'))
         except:
@@ -92,19 +96,32 @@ def patio():
     return render_template("patio.html", gamePage=gamePage)
 
 
-@app.route("/pot")
-def pot():
+@app.route("/entry/<trigger>")
+def entry(trigger):
     gamePage = True
-    player_no = session["player_no"]
-    trigger = "empty_plant_pot"
+    origin = request.args.get('origin', None)
     dialog = mongo.db.dialog.find_one({
-        "player": player_no,
+        "player": session["player_no"],
         "trigger": trigger
         }, ["dialog"])
-    print(player_no)
-    print(dialog)
+    
+    entry = {
+        "player": session["player_no"],
+        "text": dialog["dialog"]
+    }
+    print(entry)
 
-    return render_template("patio.html", gamePage=gamePage, entry=dialog)
+    game_text = mongo.db.game_text.find_one(
+        {
+            "game_id": session["game_id"]
+        }
+    )
+    game_text_id = game_text["_id"]
+    
+    mongo.db.game_text.update_one(
+            {"_id": ObjectId(game_text_id)}, {'$push': {'entries': entry}})
+
+    return render_template(f"{origin}.html", gamePage=gamePage)
 
 
 @app.route("/bedroom")
