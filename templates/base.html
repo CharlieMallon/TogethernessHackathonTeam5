@@ -6,6 +6,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- CSS only -->
         <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" type="text/css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" type="text/css">
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Comfortaa:wght@300;400;700&family=Indie+Flower&family=Pacifico&display=swap" rel="stylesheet">
         <title>Index</title>
     </head>
     <body>
@@ -13,34 +18,37 @@
             <div class="container">
                 <div class="row">
                     <div>
-                        <img class="bg_image" src="{{ url_for('static', filename='img/tower.jpg') }}">
-                        <div class="bg_text">
-                            
+                        <!-- <img class="bg_image" src="{{ url_for('static', filename='img/tower.jpg') }}"> -->
+                        <div class="bg_overlay">
+                            <div class="header_text">
+                                {% if gamePage == True %}
+                                    {% block if_block %}
+                                        <a href="{{ url_for('index') }}"><h1>LOST IN TIME</h1></a>
+                                    {% endblock if_block %}
+                                {% else %}
+                                    {% block else_block %}
+                                        <a href="{{ url_for('index') }}"><h1 class="heading_padded">LOST IN TIME</h1></a>
+                                    {% endblock else_block %}
+                                {% endif %}
+                            </div>
                             {% if gamePage == True %}
-                                {% block if_block %}
-                                    <a href="{{ url_for('index') }}"><h1>LOST IN TIME</h1></a>
-                                {% endblock if_block %}
+                                <div class="game-container">
+                                    <div id="game-canvas">
+                                        {% block game_content %}
+                                        {% endblock %}
+                                    </div>
+                                    <div id="game-text">
+                                        <p>text will go here - each click will be a list item, could append to a list or an array. If going into the database how are we dealing with pushing data to the db, will it end up going over the read/write limit?</p>
+                                        <p>{{ entries }}</p>
+                                    </div>
+                                </div>
                             {% else %}
-                                {% block else_block %}
-                                    <a href="{{ url_for('index') }}"><h1 style="padding-top: 15vh;">LOST IN TIME</h1></a>
-                                {% endblock else_block %}
+                                <div class="index_container">
+                                    {% block content %}
+                                    {% endblock content %}
+                                </div>
                             {% endif %}
                         </div>
-                        {% if gamePage == True %}
-                            <div class="game-container">
-                                <div id="game-canvas">
-                                    {% block game_content %}
-                                    {% endblock %}
-                                </div>
-                                <div id="game-text">
-                                    <p>text will go here - each click will be a list item, could append to a list or an array. If going into the database how are we dealing with pushing data to the db, will it end up going over the read/write limit?</p>
-                                    <p>{{ entries }}</p>
-                                </div>
-                            </div>
-                        {% else %}
-                            {% block content %}
-                            {% endblock content %}
-                        {% endif %}
                     </div>
                 </div>
             </div>
