@@ -28,7 +28,7 @@
     <input id="player_name" name="player_name" type="text">
     <div class="center_buttons">
         <button class="button" type="submit">Start</button>
-        <div class="button">***Share</div>
+        <div class="button" onclick="shareGame()">Share Game</div>
     </div>
 </form>
 {% endblock %}
@@ -49,5 +49,24 @@
             gameIdInput.value = finalWords;
         }
         game_ID();
+
+        function shareGame() {
+            // code taken from https://www.w3schools.com/howto/howto_js_copy_clipboard.asp
+            /* Get the text field */
+            var copyText = document.getElementById("game_ID");
+
+            console.log('copyText', copyText)
+
+            /* Select the text field */
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+            /* Copy the text inside the text field */
+            navigator.clipboard.writeText(copyText.value);
+
+            /* Alert the copied text */
+            alert("Copied the Game ID, Share this with your friends!  " + copyText.value);
+        }
+
     </script>
 {% endblock %}
