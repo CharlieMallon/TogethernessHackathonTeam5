@@ -1,3 +1,4 @@
+from html import entities
 import os
 from flask import (
     Flask, flash, render_template,
@@ -120,8 +121,14 @@ def entry(trigger):
     
     mongo.db.game_text.update_one(
             {"_id": ObjectId(game_text_id)}, {'$push': {'entries': entry}})
+    
+    entries = mongo.db.game_text.find_one(
+        {
+            "game_id": session["game_id"]
+        }, ["entries"]
+    )
 
-    return render_template(f"{origin}.html", gamePage=gamePage)
+    return render_template(f"{origin}.html", gamePage=gamePage, entries=entries)
 
 
 @app.route("/bedroom")
