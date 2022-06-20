@@ -89,12 +89,12 @@ Balsamiq wireframes
 Tower Model
 <br>
 <img src="./static/img/towerWF.JPG"
-     alt="Tower model" style="width: 20%;">
+     alt="Tower model" style="width: 30%;">
 
 Wireframes
 <br>
 <img src="./static/img/wf.JPG"
-     alt="Wireframes" style="width: 50%;">
+     alt="Wireframes" style="width: 75%;">
 
 <a href="#index">Back to top ☝️ </a>
 <span id="features"></span>
