@@ -131,7 +131,16 @@ def hallway():
 @app.route("/patio")
 def patio():
     gamePage = True
-    return render_template("patio.html", gamePage=gamePage)
+    entries = mongo.db.game_text.find_one(
+        {
+            "game_id": session["game_id"]
+        }, ["entries"]
+    )
+    print(session["game_id"])
+    print()
+
+    return render_template("patio.html", gamePage=gamePage, entries=entries['entries'],
+                           current_player=session["player_no"])
 
 
 @app.route("/entry/<trigger>")
@@ -165,7 +174,7 @@ def entry(trigger):
         }, ["entries"]
     )
 
-    return render_template(f"{origin}.html", gamePage=gamePage, entries=entries)
+    return render_template(f"{origin}.html", gamePage=gamePage, entries=entries, current_player=session["player_no"])
 
 
 @app.route("/bedroom")
