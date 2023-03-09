@@ -23,22 +23,30 @@
                             <div class="header_text">
                                 {% if gamePage == True %}
                                     {% block if_block %}
-                                        <a href="{{ url_for('index') }}"><h1>OUT OF TIME</h1></a>
+                                        <a href="{{ url_for('index') }}"><h1><span class="pride-text">OUT</span> OF TIME</h1></a>
                                     {% endblock if_block %}
                                 {% else %}
                                     {% block else_block %}
-                                        <a href="{{ url_for('index') }}"><h1 class="heading_padded">OUT OF TIME</h1></a>
+                                        <a href="{{ url_for('index') }}"><h1 class="heading_padded"><span class="pride-text">OUT</span> OF TIME</h1></a>
                                     {% endblock else_block %}
                                 {% endif %}
                             </div>
                             {% if gamePage == True %}
                                 <div class="game-container">
-                                    <div id="game-canvas">
+                                    <div id="game-canvas" class="pride-border">
                                         {% block game_content %}
                                         {% endblock %}
                                     </div>
                                     <div id="game-text">
-                                        <p>{{ entries }}</p>
+                                        {% for entry in entries %}
+                                            {% if entry.player == current_player %}
+                                                <!-- left align text -->
+                                                <p class="text-player{% if current_player == 1 %} text-present{% else %} text-past{% endif %}">{{ entry.text }}</p>
+                                            {% else %}
+                                                <!-- right align text -->
+                                                <p class="text-companion{% if current_player == 1 %} text-past{% else %} text-present{% endif %}">{{ entry.text }}</p>
+                                            {% endif %}
+                                        {% endfor %}
                                     </div>
                                 </div>
                             {% else %}

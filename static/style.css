@@ -4,12 +4,15 @@
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
-    font-family: 'Comfortaa', cursive;
 }
 
 html {
     background: url(/static/img/tower.jpg) no-repeat center center fixed;
     background-size: cover;
+}
+
+body {
+    font-family: 'Comfortaa', cursive;
 }
 
 /* tower image */
@@ -156,7 +159,6 @@ input:checked + .slider:before {
     height: 760px;
     width: 760px;
     position: relative;
-    border: solid #fff 7px;
     border-radius: 16px;
     overflow: hidden;
 }
@@ -176,11 +178,11 @@ input:checked + .slider:before {
 
 #game-text{
     min-height: 150px;
-    height: 25vh;
+    max-height: 730vh;
     width: 760px;
     border: solid #fff 7px;
     border-radius: 16px;
-    overflow: hidden;
+    overflow-y: auto;
     margin-top: 10px;
     padding: 50px;
     background: url(/static/img/notebook.jpg) no-repeat center top local;
@@ -188,6 +190,65 @@ input:checked + .slider:before {
 
 #game-text p{
     margin: 0px;
+}
+
+.text-player {
+    text-align: start;
+}
+
+.text-companion {
+    text-align: end;
+}
+
+.text-past {
+    font-family: 'Indie Flower', cursive;
+}
+
+.text-present {
+    font-family: 'Caveat', cursive;
+}
+
+.pride-border {
+    border: double 7px transparent;
+    background-image: linear-gradient(white, white),
+    /* REF: https://cesque.com/gaydient/ */
+    linear-gradient(to right,
+                  rgb(237, 34, 36),
+                  rgb(243, 91, 34),
+                  rgb(249, 150, 33),
+                  rgb(245, 193, 30),
+                  rgb(241, 235, 27) 27%,
+                  rgb(241, 235, 27),
+                  rgb(241, 235, 27) 33%,
+                  rgb(99, 199, 32),
+                  rgb(12, 155, 73),
+                  rgb(33, 135, 141),
+                  rgb(57, 84, 165),
+                  rgb(97, 55, 155),
+                  rgb(147, 40, 142));
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+}
+
+.pride-text {
+    background-image: linear-gradient(to right,
+                  rgb(237, 34, 36),
+                  rgb(243, 91, 34),
+                  rgb(249, 150, 33),
+                  rgb(245, 193, 30),
+                  rgb(241, 235, 27) 27%,
+                  rgb(241, 235, 27),
+                  rgb(241, 235, 27) 33%,
+                  rgb(99, 199, 32),
+                  rgb(12, 155, 73),
+                  rgb(33, 135, 141),
+                  rgb(57, 84, 165),
+                  rgb(97, 55, 155),
+                  rgb(147, 40, 142));
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-size: 100%;
+    color: transparent;
 }
 
 #back{
