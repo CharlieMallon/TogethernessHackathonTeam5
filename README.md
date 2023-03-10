@@ -8,7 +8,7 @@
 ### June 2022 Hackathon
 #### Pride Togetherness 🌈
 
-#### [live website here](https://togetherness-team5.herokuapp.com/)
+#### [live website here](https://lost-in-time.onrender.com)
 --------------------------------------
 
 <span id="index"></span>
@@ -180,15 +180,19 @@ GitHub repository was linked with Heroku and is hosted here
 
 Code and other files as images, and other documents are stored in Github repository. Instructions how to deploy project with Github pages can be found [here](https://github.com/Martin-ITT/memoryTesting). At the time of working on this project Github pages does not support generating dynamic content (running a python code). A cloud application platform Heroku is used to run and operate this project. Heroku is linked with Github repository and automatically deploys the most recent version of the code. MongoDB service is used to store all data. 
 
-Heroku deployment guideline
-1. Create Heroku account
-1. Select Create New app
-1. Provide name and your region and create the app
-1. Select Deploy tab and under deployment method select Connect to GitHub
-1. Find corresponding repository and select Connect
-1. You can enable Automatic Deploys from corresponding branch
-1. Secret variables from local env<span>.</span>py had to be added to Heroku config variables. This can be found under Settings tab - Reveal Config Vars
-1. Select Open app button to run the app
+Render deployment guideline
+1. Create a Render account at [render.com](render.com)
+1. Select Create New Web Service
+1. Copy and paste this repository URL into the Public Git repository box and click continue.
+1. Provide name a unique name and your region
+1. You should be able to accept most of the other default settings
+1. In Start Command enter `python app.py`
+1. Make sure to select the Free instance type
+1. Click advanced
+1. You will need environmental variables from MongDB (below)
+1. You can add environmental variables one by one or add a secret file if you want to set up an env.py or similar
+1. You can set Auto-Deploy to yes (use this option if you have cloned your own repository)
+1. Click Create Web Service and wait for the build to complete
 
 MongoDB guideline
 1. Create MongoDB account
